@@ -5,8 +5,8 @@ const App = () => {
 
   return (
     <main>
-      <Toaster position="top-right" toastOptions={{duration: 2000}}/>
       <section>
+        <Toaster position="top-right" toastOptions={{duration: 2000}}/>
         <GoalSection />
       </section>
     </main>
