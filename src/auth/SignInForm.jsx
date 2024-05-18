@@ -2,13 +2,16 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import LinkTag from '../components/LinkTag';
 import CustomGoalButton from '../components/CustomGoalButton';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { redirect, useNavigate } from 'react-router-dom';
+import { GlobalContext } from "../context/AuthProvider"
 
 
 const SignInForm = () => {
+  // const navigate = useNavigate();
+  const { setReload } = useContext(GlobalContext);
 
   const navigate = useNavigate();
   const [data, setData] = useState({
@@ -33,8 +36,9 @@ const SignInForm = () => {
       }else{
         setData({});
         toast.success('Logged In Successful!');
+        setReload(prev => !prev)
         // toast.success('Refresh the Page');
-        navigate('/')
+        navigate('/redirect')
       }
     } catch (error) {
       console.log(error)

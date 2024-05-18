@@ -1,4 +1,4 @@
-import GoalSection from "./sections/GoalSection";
+// import GoalSection from "./sections/GoalSection";
 import { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { AuthProvider } from "./context/AuthProvider";
@@ -6,6 +6,10 @@ import { BrowserRouter as Router, Route, Routes, redirect, Navigate } from "reac
 import LoginPage from "./auth/LoginPage";
 import SignupPage from "./auth/SignupPage";
 import Dashboard from "./sections/Dashboard";
+import Header from "./sections/Header";
+import Footer from "./sections/Footer";
+import MainPrivateRoute from "./privateRoutes/MainPrivateRoute";
+import HomePage from "./auth/HomePage";
 
 
 
@@ -16,28 +20,36 @@ const App = () => {
 
   return (
     <Router>
-      <section className=" pr-10 pl-10">
+      <section className="">
         <AuthProvider>
           <Toaster position="top-right" toastOptions={{duration: 2000}}/>
 
+          {/* Header */}
+          <Header />
+
           <Routes>
+
             {/* /Public Routes */}
-            <Route exact path="/" element={<Dashboard />} />
+            <Route exact path="/" element={<HomePage />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route exact path="/register" element={<SignupPage />} />
+
+            {/* /Private Routes */}
+            <Route exact path="/user" element={<MainPrivateRoute />} >
+              <Route exact path="" element={<Dashboard />} />
+            </Route>
+
+            {/* Redirect Route */}
+            <Route path="/redirect" element={<Navigate to="/"/>} />
+
           </Routes>
 
-          {/* <GoalSection /> */}
-          {/* <LoginPage /> */}
+          {/* Footer */}
+          <Footer />
+
         </AuthProvider>
       </section>
     </Router>
-    // <main>
-    //   <section>
-    //     <Toaster position="top-right" toastOptions={{duration: 2000}}/>
-    //     <GoalSection />
-    //   </section>
-    // </main>
   )
 }
 

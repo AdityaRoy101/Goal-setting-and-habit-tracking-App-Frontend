@@ -3,7 +3,7 @@ import GoalVisualRpresntation from "./GoalVisualRpresntation"
 
 const Dashboard = () => {
   return (
-    <main>
+    <main className=" pr-10 pl-10">
         <section className=" justify-between  flex">
             <GoalVisualRpresntation />
             <GoalSection />

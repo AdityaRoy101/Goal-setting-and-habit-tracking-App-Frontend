@@ -68,7 +68,7 @@ const GoalSection = () => {
         <section className=" flex gap-3 flex-col">
           <div className="flex gap-3">
             <InputComponent text="Enter a Goal" work={enterNewGoal}/>
-            <CustomGoalButton text='Create Goal' work={createNewGoal} image={addicon} w={35} h={35} />
+            <CustomGoalButton text='New Goal' work={createNewGoal} image={addicon} w={35} h={35} />
           </div>
           {totalGoalsLength > 0
           ?
