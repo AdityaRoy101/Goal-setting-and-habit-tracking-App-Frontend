@@ -26,7 +26,6 @@ const SessionOutPage = () => {
                 />
                 <h2 className=' mb-5 mt-5 font-montserrat font-medium text-slate-600 text-[20px]'>You Came to the wrong track, make sure your are Logged In !!!</h2>
                 <LinkTag text="Sign In" route={login}/>
-                {/* <LinkTag text="Sign In" route={login}/> */}
             </section>
         </main>
     );

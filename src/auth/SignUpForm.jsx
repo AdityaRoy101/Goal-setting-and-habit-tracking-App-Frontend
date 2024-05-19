@@ -26,7 +26,6 @@ const SignUpForm = () => {
   const registerUser = async (e) => {
     // e.preventDefault()
     const {name, email, password} = data;
-    // goals_array.push(`${email}`)
     try {
       const {data} = await axios.post('/signup',{
         name, email, password, goals_array
@@ -45,10 +44,10 @@ const SignUpForm = () => {
 
   const onFinish = (values) => {
     registerUser();
-  console.log('Success:', values);
+  // console.log('Success:', values);
   };
   const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
+  // console.log('Failed:', errorInfo);
   };
 
 

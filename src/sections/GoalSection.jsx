@@ -13,54 +13,20 @@ const GoalSection = () => {
   const { userId } = useContext(GlobalContext);
 
   const [goalName, setGoalName] = useState("")
-  const [newGoal, setNewGoal] = useState("")
-  // const [goalIdddd, setGoalIdd] = useState("")
-  // const [newGoal, setNewGoal] = useState("")
-  const [totalGoalsLength, setTotalGoalsLength] = useState(0)
+
+  const [createGoal, setCreateGoal] = useState(false)
+
 
   const enterNewGoal = (text) => {
     setGoalName(text)
   }
 
-  // const goalrt = async() => {
-  //   await axios.post('/goal/setgoalarray', {userId, goalIdddd})
-  //   .then(({data}) => {
-  //     console.log(data);
-  //     // setGoalId(data);
-  //     // console.log(userId);
-  //   })
-  // }
-
-  const createNewGoal = async() => {
-    
-    var goalID = goalName;
-    await axios.post('/goal/creategoal', {goalID})
-    .then(( async(data) => {
-      {data.data.error? <>
-      {console.log(data.error)}
-      {toast.error(`Goal ${goalName} Existed in Database!`)}
-      </>:
-      // console.log(data.data.error);
-      await axios.post('/goal/setgoalarray', {userId, data})
-      .then((d) => {
-        console.log(d);
-        // setGoalId(data);
-        // console.log(userId);
-        setNewGoal(goalID)
-        setTotalGoalsLength(prev => prev+1)
-        toast.success(`Goal ${goalName} Created!`);
-      })
-      console.log(data);
-      // setGoalIdd(toString(data));
-      // console.log(userId);
-      }
-    }))
-
-    // goalrt();
-
-    // setNewGoal(goalName)
-    // setTotalGoalsLength(prev => prev+1)
-    // toast.success(`Goal ${goalName} Created!`);
+  const goalLengthTrue = () => {
+    if(goalName === ""){
+      toast.error("Enter goal name to create goal")
+    }else{
+      setCreateGoal(true);
+    }
   }
 
   return (
@@ -68,12 +34,12 @@ const GoalSection = () => {
         <section className=" flex gap-3 flex-col">
           <div className="flex gap-3">
             <InputComponent text="Enter a Goal" work={enterNewGoal}/>
-            <CustomGoalButton text='New Goal' work={createNewGoal} image={addicon} w={35} h={35} />
+            <CustomGoalButton text='New Goal' work={goalLengthTrue} image={addicon} w={35} h={35} />
           </div>
-          {totalGoalsLength > 0
+          {createGoal === true
           ?
           <section className="">
-            <NewGoalComponent text={newGoal}/>
+            <NewGoalComponent text={goalName} openButton={setCreateGoal} setCreateGoal={setCreateGoal}/>
           </section>
           :
           <></>

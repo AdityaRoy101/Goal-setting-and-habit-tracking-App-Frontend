@@ -10,8 +10,6 @@ export const AuthProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [reload, setReload] = useState(false);
-  const [goalArray, setGoalArray] = useState([]);
-  // const [goalArray, setGoalArray] = useState([]);
 
   useEffect(() =>{
     if(!userAuth){
@@ -22,12 +20,6 @@ export const AuthProvider = ({ children }) => {
           setUserEmail(data.email)
           setUserName(data.name)
           setUserName(data.goals_array)
-          // {data.goals_array && console.log(data.goals_array)}
-          console.log(data);
-          // console.log(data._id);
-          // console.log(data.goals_array);
-          // console.log(userEmail);
-          // console.log(userName);
         })
     }
   },[reload])

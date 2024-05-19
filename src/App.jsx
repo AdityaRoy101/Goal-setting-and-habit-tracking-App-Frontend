@@ -7,7 +7,6 @@ import LoginPage from "./auth/LoginPage";
 import SignupPage from "./auth/SignupPage";
 import Dashboard from "./sections/Dashboard";
 import Header from "./sections/Header";
-import Footer from "./sections/Footer";
 import MainPrivateRoute from "./privateRoutes/MainPrivateRoute";
 import HomePage from "./auth/HomePage";
 
@@ -43,9 +42,6 @@ const App = () => {
             <Route path="/redirect" element={<Navigate to="/"/>} />
 
           </Routes>
-
-          {/* Footer */}
-          <Footer />
 
         </AuthProvider>
       </section>

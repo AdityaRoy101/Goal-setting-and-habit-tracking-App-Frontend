@@ -1,12 +1,12 @@
 import { useContext, useState } from 'react'
 import homeImage from '../assets/icons/Home_image.png'
-// import PrimaryButton from '../components/PrimaryButton'
-// import SecondaryButton from '../components/SecondaryButton'
 import CustomGoalButton from '../components/CustomGoalButton'
 import hamburgerIcon from '../assets/icons/hamburger.png'
 import { GlobalContext } from "../context/AuthProvider"
 import BreadCrumb from '../components/BreadCrumb'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const Header = () => {
 
@@ -14,7 +14,6 @@ const Header = () => {
 
   const { userAuth } = useContext(GlobalContext);
   const [Menu, setMenu] = useState(false);
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const openMenu = () => {
     setMenu(prev => !prev);
@@ -30,6 +29,16 @@ const Header = () => {
 
   const openDashboard = () => {
     navigate("/user")
+  }
+
+  const signOut = async() => {
+    await axios.post(`/signout`)
+      .then((data) => {data})
+      .catch(err => console.log(err))
+
+    toast.success("User Logged out Succesfully")
+    toast.success("Refresh the Page")
+    navigate('/redirect')
   }
 
   return (
@@ -62,8 +71,10 @@ const Header = () => {
           (
           <section className='invisible sm:invisible md:visible lg:visible xl:visible 2xl:visible'>
             <div className='Buttons and others'>
-              <div className=' flex gap-5'>
+              <div className=' flex gap-5 items-center'>
+                <h3 className=' font-palanquin text-[18px] font-semibold'>Welcome {userAuth.name}</h3>
                 <CustomGoalButton text=" Go to Dashboard" work={openDashboard}/>
+                <CustomGoalButton text="Sign Out" work={signOut}/>
               </div>
             </div>
           </section>

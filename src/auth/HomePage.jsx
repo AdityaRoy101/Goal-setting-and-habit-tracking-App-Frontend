@@ -1,15 +1,8 @@
-// import InputText from "../components/InputText"
 import InputComponent from "../components/InputComponent"
 import LinkTag from "../components/LinkTag"
-// import SecondaryButton from "../components/SecondaryButton"
 import CustomGoalButton from '../components/CustomGoalButton'
 import { useNavigate } from 'react-router-dom';
-// import { navigate } from "react-router";
-// import Header from "../sections/Header"
-// import axios from "axios";
 
-// // axios.defaults.baseURL = 'http://localhost:5000/api/user';
-// // axios.defaults.withCredentials = true;
 
 
 const HomePage = () => {
@@ -24,8 +17,8 @@ const HomePage = () => {
         {/* <Header /> */}
         <section className=" hero section mt-[140px] flex justify-center items-center">
           <div className=" flex justify-center items-center flex-col">
-            <h1 className=" text-[35px] font-bold font-palanquin 2xl:text-[55px] xl:text-[50px] md:text-[45px] sm:text-[40px]">AI Image Visualizer</h1>
-            <p className=" w-[500px] text-center text-gray-500 text-[10px] xl:text-[17px] md:text-[16px] sm:text-[15px]">Here you can upoad images or give image url and the algorithm can detect peoples in images</p>
+            <h1 className=" text-[35px] font-bold font-palanquin 2xl:text-[55px] xl:text-[50px] md:text-[45px] sm:text-[40px]">Goal and Habit Tracker</h1>
+            <p className=" w-[500px] text-center text-gray-500 text-[10px] xl:text-[17px] md:text-[16px] sm:text-[15px]">Here you can create your own goals and tasks to perform the goals</p>
           </div>
         </section>
         <section className="flex mt-10 justify-center items-center flex-row gap-2">

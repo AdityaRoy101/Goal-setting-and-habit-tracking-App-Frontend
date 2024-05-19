@@ -10,7 +10,6 @@ import { GlobalContext } from "../context/AuthProvider"
 
 
 const SignInForm = () => {
-  // const navigate = useNavigate();
   const { setReload } = useContext(GlobalContext);
 
   const navigate = useNavigate();
@@ -47,11 +46,11 @@ const SignInForm = () => {
 
   const onFinish = (values) => {
     signinUser();
-  console.log('Success:', values);
+  // console.log('Success:', values);
   };
 
   const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
+  // console.log('Failed:', errorInfo);
   };
 
 
