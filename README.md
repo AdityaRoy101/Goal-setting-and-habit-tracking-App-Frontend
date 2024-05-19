@@ -1,6 +1,18 @@
 # Goal-setting-and-habit-tracking-App-Frontend
 Goal setting and habit tracking App
+
+Dashboard
+===========
 <img width="959" alt="image" src="https://github.com/AdityaRoy101/Goal-setting-and-habit-tracking-App-Frontend/assets/86155138/0717f2a9-1ada-4b23-9695-3cd2ac24083f">
+
+SignIn
+========
+<img width="960" alt="image" src="https://github.com/AdityaRoy101/Goal-setting-and-habit-tracking-App-Frontend/assets/86155138/cf57e880-df41-49c7-af66-b9b6020054c9">
+
+SignUp
+========
+<img width="960" alt="image" src="https://github.com/AdityaRoy101/Goal-setting-and-habit-tracking-App-Frontend/assets/86155138/664ce195-fff5-4f3d-8ed4-0741acbc48b2">
+
 
 To run this on your localhost
 1. npm must be installed
