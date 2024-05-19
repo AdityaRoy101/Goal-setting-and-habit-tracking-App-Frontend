@@ -1,6 +1,7 @@
 # Goal-setting-and-habit-tracking-App-Frontend
 Goal setting and habit tracking App
 <img width="959" alt="image" src="https://github.com/AdityaRoy101/Goal-setting-and-habit-tracking-App-Frontend/assets/86155138/0717f2a9-1ada-4b23-9695-3cd2ac24083f">
+
 To run this on your localhost
 1. npm must be installed
 2. npm i
